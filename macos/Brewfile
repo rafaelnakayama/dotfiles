@@ -21,6 +21,10 @@ brew "portaudio"
 brew "python@3.13"
 # ODBC 3 connectivity for UNIX
 brew "unixodbc"
+# Fish-like fast/unobtrusive autosuggestions for zsh
+brew "zsh-autosuggestions"
+# Fish shell like syntax highlighting for zsh
+brew "zsh-syntax-highlighting"
 # ODBC Driver for Microsoft(R) SQL Server(R)
 brew "microsoft/mssql-release/msodbcsql18", trusted: true
 # Terminal-based AI coding assistant
@@ -29,6 +33,10 @@ cask "claude-code@latest"
 cask "dbeaver-community"
 # Online diagram software
 cask "drawio"
+# Terminal emulator that uses platform-native UI and GPU acceleration
+cask "ghostty"
+# Replacement for Docker Desktop
+cask "orbstack"
 vscode "alexcvzz.vscode-sqlite"
 vscode "fabiospampinato.vscode-todo-plus"
 vscode "mechatroner.rainbow-csv"
