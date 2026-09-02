@@ -1,0 +1,20 @@
+# Allowlist: everything is ignored unless explicitly permitted below.
+# A file that is not listed here does not get committed by accident.
+/*
+
+!.gitignore
+!README.md
+!install.sh
+!shared
+!macos
+!linux
+!archive
+
+# Denied again inside the permitted directories
+**/.DS_Store
+**/*.log
+**/id_rsa*
+**/id_ed25519*
+**/*.pem
+**/*.key
+**/known_hosts
