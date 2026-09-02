@@ -1,0 +1,18 @@
+{
+  "files.autoSave": "afterDelay",
+  "workbench.iconTheme": "material-icon-theme",
+  "liveServer.settings.donotShowInfoMsg": true,
+  "settingsSync.ignoredExtensions": [],
+  "settingsSync.ignoredSettings": [],
+  "jdk.telemetry.enabled": false,
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  "redhat.telemetry.enabled": false,
+  "workbench.colorTheme": "Nicer High Contrast",
+  "mssql.objectExplorer.groupBySchema": false,
+  "python.createEnvironment.trigger": "off"
+}
