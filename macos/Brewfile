@@ -1,0 +1,65 @@
+tap "microsoft/mssql-release", "https://github.com/Microsoft/homebrew-mssql-release"
+# GitHub command-line tool
+brew "gh"
+# Distributed revision control system
+brew "git"
+# Quickly rewrite git repository history
+brew "git-filter-repo"
+# Java-based project management
+brew "maven"
+# Open-source, cross-platform JavaScript runtime environment
+brew "node"
+# Development kit for the Java programming language
+brew "openjdk@21"
+# Execute binaries from Python packages in isolated environments
+brew "pipx"
+# Python package management tool
+brew "poetry"
+# Cross-platform library for audio I/O
+brew "portaudio"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.13"
+# ODBC 3 connectivity for UNIX
+brew "unixodbc"
+# ODBC Driver for Microsoft(R) SQL Server(R)
+brew "microsoft/mssql-release/msodbcsql18", trusted: true
+# Terminal-based AI coding assistant
+cask "claude-code@latest"
+# Universal database tool and SQL client
+cask "dbeaver-community"
+# Online diagram software
+cask "drawio"
+vscode "alexcvzz.vscode-sqlite"
+vscode "fabiospampinato.vscode-todo-plus"
+vscode "mechatroner.rainbow-csv"
+vscode "ms-azuretools.vscode-containers"
+vscode "ms-dotnettools.vscode-dotnet-runtime"
+vscode "ms-mssql.data-workspace-vscode"
+vscode "ms-mssql.mssql"
+vscode "ms-mssql.sql-bindings-vscode"
+vscode "ms-mssql.sql-database-projects-vscode"
+vscode "ms-python.debugpy"
+vscode "ms-python.python"
+vscode "ms-python.vscode-pylance"
+vscode "ms-python.vscode-python-envs"
+vscode "ms-toolsai.jupyter"
+vscode "ms-toolsai.jupyter-keymap"
+vscode "ms-toolsai.jupyter-renderers"
+vscode "ms-toolsai.vscode-jupyter-cell-tags"
+vscode "ms-toolsai.vscode-jupyter-slideshow"
+vscode "ms-vscode-remote.remote-containers"
+vscode "ms-vsliveshare.vsliveshare"
+vscode "naumovs.color-highlight"
+vscode "pkief.material-icon-theme"
+vscode "posit.shiny"
+vscode "rafmsou.nicer-high-contrast"
+vscode "redhat.java"
+vscode "ritwickdey.liveserver"
+vscode "vscjava.migrate-java-to-azure"
+vscode "vscjava.vscode-gradle"
+vscode "vscjava.vscode-java-debug"
+vscode "vscjava.vscode-java-dependency"
+vscode "vscjava.vscode-java-pack"
+vscode "vscjava.vscode-java-test"
+vscode "vscjava.vscode-maven"
+vscode "wayou.vscode-todo-highlight"
