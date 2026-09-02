@@ -1,0 +1,20 @@
+// Zed keymap
+//
+// For information on how to customize this file, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+[
+  {
+    "bindings": {
+      "cmd-alt-v": "workspace::ToggleVimMode",
+      "cmd-alt-a": "agent::ToggleFocus",
+      "ctrl-alt-a": "agent::ToggleFocus"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-r": "task::Spawn",
+      "cmd-shift-r": "task::Rerun"
+    }
+  }
+]

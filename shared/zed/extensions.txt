@@ -1,0 +1,20 @@
+Zed extensions installed on macOS (as of 2026-08-10)
+Reinstall manually via: command palette (cmd-shift-p) -> "zed: extensions" -> search by name
+
+id                              | name                                | version
+---------------------------------------------------------------------------------
+docker-compose                  | Docker Compose                      | 0.1.0
+dockerfile                      | Dockerfile                          | 0.2.1
+git-firefly                     | Git Firefly                         | 0.1.9
+html                            | HTML                                | 0.3.1
+java                            | Java                                | 6.8.25
+latex                           | LaTeX                               | 0.2.3
+live-server                     | LiveServer                          | 0.3.1
+macos-classic                   | macOS Classic Theme                 | 0.4.0
+material-icon-theme             | Material Icon Theme                 | 1.3.1
+python-requirements              | Python requirements and constraints | 0.0.5
+rainbow-csv                     | Rainbow CSV                         | 1.1.0
+sql                              | SQL                                 | 1.1.8
+terraform                       | Terraform                            | 0.1.9
+todo-highlight-language-server  | TODO Highlight                      | 0.3.0
+todotxt                         | Todotxt                             | 0.2.3

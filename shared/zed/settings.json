@@ -1,0 +1,71 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "proxy": "",
+  "agent": {
+    "sidebar_side": "left",
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "disable_ai": true,
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 2000
+    }
+  },
+  "vim_mode": false,
+  "project_panel": {
+    "dock": "left"
+  },
+  "buffer_line_height": "comfortable",
+  "buffer_font_weight": 400.0,
+  "buffer_font_family": "Al Nile",
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+    "anthropic_retention": false
+  },
+  "ui_font_size": 16,
+  "buffer_font_size": 15.0,
+  "theme": "Ayu Dark",
+  "icon_theme": "Material Icon Theme",
+  "minimap": {
+    "show": "always"
+  },
+  "auto_install_extensions": {
+    "material-icon-theme": true
+  },
+  "lsp": {
+    "basedpyright": {
+      "settings": {
+        "basedpyright": {
+          "analysis": {
+            "typeCheckingMode": "standard"
+          }
+        },
+        "python": {
+          "analysis": {
+            "typeCheckingMode": "standard"
+          }
+        },
+        "basedpyright.analysis": {
+          "typeCheckingMode": "standard"
+        },
+        "python.analysis": {
+          "typeCheckingMode": "standard"
+        }
+      }
+    }
+  },
+  "languages": {
+    "Python": {
+      "language_servers": ["basedpyright", "!ruff"]
+    }
+  },
+}
