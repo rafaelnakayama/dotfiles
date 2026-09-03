@@ -29,7 +29,8 @@ sudo apt-get install -y \
   openjdk-21-jdk \
   python3-pip python3-venv \
   ripgrep \
-  vlc
+  vlc \
+  zsh
 
 sudo usermod -aG docker "$USER"
 

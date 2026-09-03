@@ -21,10 +21,6 @@ brew "portaudio"
 brew "python@3.13"
 # ODBC 3 connectivity for UNIX
 brew "unixodbc"
-# Fish-like fast/unobtrusive autosuggestions for zsh
-brew "zsh-autosuggestions"
-# Fish shell like syntax highlighting for zsh
-brew "zsh-syntax-highlighting"
 # ODBC Driver for Microsoft(R) SQL Server(R)
 brew "microsoft/mssql-release/msodbcsql18", trusted: true
 # Terminal-based AI coding assistant
