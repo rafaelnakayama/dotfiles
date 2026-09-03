@@ -24,3 +24,8 @@ link "$DOT/shared/zed/keymap.json"   "$HOME/.config/zed/keymap.json"
 link "$DOT/$OS_DIR/zsh/.zshrc"       "$HOME/.zshrc"
 link "$DOT/$OS_DIR/zsh/.zprofile"    "$HOME/.zprofile"
 link "$DOT/$OS_DIR/ghostty/config"   "$HOME/.config/ghostty/config"
+
+if [ "$OS_DIR" = linux ] && [ -f "$DOT/linux/ptyxis/settings.dconf" ] && command -v dconf >/dev/null; then
+  dconf load /org/gnome/Ptyxis/ < "$DOT/linux/ptyxis/settings.dconf"
+  echo "  dconf: org.gnome.Ptyxis"
+fi

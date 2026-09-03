@@ -11,8 +11,14 @@ into `$HOME`. An existing real file is moved to `.bak` first.
 | --- | --- |
 | `shared/` | git, ssh, Zed |
 | `macos/` | zsh, Ghostty, Brewfile |
-| `linux/` | same, Ubuntu machine |
+| `linux/` | Ptyxis terminal settings, `packages.sh` (apt + snap) |
 | `archive/` | backups, never linked |
+
+Ubuntu machine runs stock bash (no zsh, no Ghostty), so `linux/` doesn't
+mirror `macos/` 1:1: `packages.sh` is a standalone script (run manually,
+like `brew bundle` on macOS), and `ptyxis/settings.dconf` is loaded by
+`install.sh` via `dconf load` since terminal settings live in dconf, not
+a plain config file.
 
 `.gitignore` is an allowlist: `/*` ignores everything, each `!` opens one
 exception, so nothing is committed by accident.
