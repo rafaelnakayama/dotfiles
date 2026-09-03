@@ -24,6 +24,7 @@ sudo apt-get install -y \
   docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin \
   gh \
   git \
+  ghostty \
   google-chrome-stable \
   openjdk-21-jdk \
   python3-pip python3-venv \
