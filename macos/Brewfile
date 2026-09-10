@@ -33,6 +33,7 @@ cask "claude-code@latest"
 cask "dbeaver-community"
 # Online diagram software
 cask "drawio"
+cask "font-comic-mono"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
 # Replacement for Docker Desktop
