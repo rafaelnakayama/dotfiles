@@ -9,9 +9,9 @@ into `$HOME`. An existing real file is moved to `.bak` first.
 
 | Path | Contents |
 | --- | --- |
-| `shared/` | git, ssh, Zed |
-| `macos/` | zsh, Ghostty, Brewfile |
-| `linux/` | same, Ubuntu machine |
+| `shared/` | git, ssh, Zed, Ghostty |
+| `macos/` | zsh, Brewfile |
+| `linux/` | zsh, Ubuntu machine |
 | `archive/` | backups, never linked |
 
 `.gitignore` is an allowlist: `/*` ignores everything, each `!` opens one
