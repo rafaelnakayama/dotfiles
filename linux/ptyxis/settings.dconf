@@ -1,0 +1,7 @@
+[/]
+default-profile-uuid='2dd662cc55702a4435fb387c6a6a923b'
+interface-style='dark'
+profile-uuids=['2dd662cc55702a4435fb387c6a6a923b']
+
+[Profiles/2dd662cc55702a4435fb387c6a6a923b]
+palette='dracula'

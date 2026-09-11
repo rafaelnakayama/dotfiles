@@ -3,6 +3,7 @@
 /*
 
 !.gitignore
+!.gitmodules
 !README.md
 !install.sh
 !shared

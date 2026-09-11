@@ -5,3 +5,8 @@ font-size = 13
 window-padding-x = 10
 window-padding-y = 10
 macos-option-as-alt = true
+
+# option-as-alt above steals alt+left/right from the shell's word
+# navigation; give them back
+keybind = alt+left=unbind
+keybind = alt+right=unbind
