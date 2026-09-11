@@ -1,21 +1,19 @@
 # dotfiles
 
 ```sh
-git clone <repo> ~/Code/dotfiles && cd ~/Code/dotfiles && ./install.sh
+git clone git@github.com:rafaelnakayama/dotfiles.git ~/Code/dotfiles && cd ~/Code/dotfiles && ./install.sh
 ```
 
-`install.sh` detects the OS and symlinks `shared/` plus the matching profile
-into `$HOME`. An existing real file is moved to `.bak` first.
+`install.sh` symlinks `shared/` plus the profile for the current OS into `$HOME`,
+moving any pre-existing real file to `.bak`.
 
 | Path | Contents |
 | --- | --- |
 | `shared/` | git, ssh, Zed, Ghostty |
 | `macos/` | zsh, Brewfile |
-| `linux/` | zsh, Ubuntu machine |
+| `linux/` | zsh |
 | `archive/` | backups, never linked |
 
-`.gitignore` is an allowlist: `/*` ignores everything, each `!` opens one
-exception, so nothing is committed by accident.
+`.gitignore` is an allowlist: a new file needs its own `!` line or it is not committed.
 
-No credentials here. `archive/vscode/settings.json` is sanitized, with the
-`mssql` connection profiles stripped.
+No credentials here; `archive/vscode/settings.json` has the `mssql` profiles stripped.
