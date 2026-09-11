@@ -12,16 +12,18 @@ moving any pre-existing real file to `.bak`.
 | Path | Contents |
 | --- | --- |
 | `shared/` | git, ssh, Zed, Ghostty, vendored zsh plugins |
-| `macos/` | zsh, Brewfile |
-| `linux/` | zsh, Ptyxis settings, `xdg-terminals.list`, `packages.sh` |
+| `macos/` | zsh, Brewfile, Ghostty overlay |
+| `linux/` | zsh, Ptyxis settings, `xdg-terminals.list`, `packages.sh`, Ghostty overlay |
 | `archive/` | backups, never linked |
 
 Packages are installed by hand: `brew bundle` on macOS, `linux/packages.sh`
 (apt + snap) on Ubuntu, which has no Homebrew.
 
 Linux only: `ptyxis/settings.dconf` is loaded by `install.sh` through `dconf load`,
-since GNOME keeps those settings in dconf, and `xdg-terminals.list` points
-`Ctrl+Alt+T` at Ghostty instead of Ptyxis.
+since GNOME keeps those settings in dconf, and `xdg-terminals.list` points GNOME's
+"launch terminal" shortcut at Ghostty instead of Ptyxis. `install.sh` moves that
+shortcut to `Ctrl+Alt+N`, the same physical keys as the `Ctrl+Cmd+N` global hotkey
+on macOS; `<os>/ghostty/os.conf` holds the matching new-tab keybind for each OS.
 
 `shared/zsh-plugins/` pins both zsh plugins as submodules so every machine sources
 the same version. `.gitignore` is an allowlist: a new file needs its own `!` line

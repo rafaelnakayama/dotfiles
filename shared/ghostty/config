@@ -10,3 +10,7 @@ macos-option-as-alt = true
 # navigation; give them back
 keybind = alt+left=unbind
 keybind = alt+right=unbind
+
+# per-OS overlay, linked by install.sh: the open/new-tab keybinds use a
+# different modifier on each OS to land on the same physical keys
+config-file = ?os.conf

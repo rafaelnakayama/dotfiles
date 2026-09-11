@@ -22,6 +22,7 @@ link "$DOT/shared/ssh/config"        "$HOME/.ssh/config"
 link "$DOT/shared/zed/settings.json" "$HOME/.config/zed/settings.json"
 link "$DOT/shared/zed/keymap.json"   "$HOME/.config/zed/keymap.json"
 link "$DOT/shared/ghostty/config"    "$HOME/.config/ghostty/config"
+link "$DOT/$OS_DIR/ghostty/os.conf"  "$HOME/.config/ghostty/os.conf"
 link "$DOT/$OS_DIR/zsh/.zshrc"       "$HOME/.zshrc"
 link "$DOT/$OS_DIR/zsh/.zprofile"    "$HOME/.zprofile"
 link "$DOT/$OS_DIR/xdg-terminals.list" "$HOME/.config/xdg-terminals.list"
@@ -29,4 +30,13 @@ link "$DOT/$OS_DIR/xdg-terminals.list" "$HOME/.config/xdg-terminals.list"
 if [ "$OS_DIR" = linux ] && [ -f "$DOT/linux/ptyxis/settings.dconf" ] && command -v dconf >/dev/null; then
   dconf load /org/gnome/Ptyxis/ < "$DOT/linux/ptyxis/settings.dconf"
   echo "  dconf: org.gnome.Ptyxis"
+fi
+
+# GNOME's own "launch terminal" shortcut, moved off Ctrl+Alt+T so it matches
+# the Ctrl+Cmd+N global hotkey on macOS. xdg-terminals.list points it at Ghostty.
+MEDIA_KEYS=org.gnome.settings-daemon.plugins.media-keys
+if [ "$OS_DIR" = linux ] && command -v gsettings >/dev/null &&
+   gsettings list-keys "$MEDIA_KEYS" 2>/dev/null | grep -qx terminal; then
+  gsettings set "$MEDIA_KEYS" terminal "['<Control><Alt>n']"
+  echo "  gsettings: launch terminal = Ctrl+Alt+N"
 fi
