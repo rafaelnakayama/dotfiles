@@ -42,3 +42,12 @@ sudo snap install drawio
 sudo snap install firefox
 sudo snap install spotify
 sudo snap install steam
+
+# Comic Mono: not in apt, and the shared Ghostty config asks for it by name,
+# so without this the font silently falls back on Linux.
+FONT_DIR="$HOME/.local/share/fonts"
+mkdir -p "$FONT_DIR"
+for f in ComicMono.ttf ComicMono-Bold.ttf; do
+  curl -fsSL -o "$FONT_DIR/$f" "https://dtinth.github.io/comic-mono-font/$f"
+done
+fc-cache -f "$FONT_DIR"

@@ -4,3 +4,21 @@
 [submodule "shared/zsh-plugins/zsh-syntax-highlighting"]
 	path = shared/zsh-plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "shared/tmux/plugins/tpm"]
+	path = shared/tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm.git
+[submodule "shared/tmux/plugins/tmux-sensible"]
+	path = shared/tmux/plugins/tmux-sensible
+	url = https://github.com/tmux-plugins/tmux-sensible.git
+[submodule "shared/tmux/plugins/tmux-pain-control"]
+	path = shared/tmux/plugins/tmux-pain-control
+	url = https://github.com/tmux-plugins/tmux-pain-control.git
+[submodule "shared/tmux/plugins/tmux-yank"]
+	path = shared/tmux/plugins/tmux-yank
+	url = https://github.com/tmux-plugins/tmux-yank.git
+[submodule "shared/tmux/plugins/tmux-copycat"]
+	path = shared/tmux/plugins/tmux-copycat
+	url = https://github.com/tmux-plugins/tmux-copycat.git
+[submodule "shared/tmux/plugins/tmux-resurrect"]
+	path = shared/tmux/plugins/tmux-resurrect
+	url = https://github.com/tmux-plugins/tmux-resurrect.git
