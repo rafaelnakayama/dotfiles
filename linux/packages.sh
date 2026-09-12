@@ -29,6 +29,7 @@ sudo apt-get install -y \
   openjdk-21-jdk \
   python3-pip python3-venv \
   ripgrep \
+  tmux \
   vlc \
   zsh
 

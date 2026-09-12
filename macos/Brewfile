@@ -19,6 +19,8 @@ brew "poetry"
 brew "portaudio"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.13"
+# Terminal multiplexer
+brew "tmux"
 # ODBC 3 connectivity for UNIX
 brew "unixodbc"
 # ODBC Driver for Microsoft(R) SQL Server(R)
