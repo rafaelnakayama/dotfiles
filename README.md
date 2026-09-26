@@ -11,3 +11,8 @@ Cloned without `--recurse-submodules`? Run `git submodule update --init --recurs
 
 `install.sh` links configs only. Install the packages separately: `brew bundle`
 on macOS, `linux/packages.sh` on Ubuntu.
+
+On Ubuntu the shared Ghostty config asks for Comic Mono by name, which apt does
+not carry; without it the font silently falls back. `linux/packages.sh` installs
+it, or run `linux/fonts.sh` on its own to add fonts to a machine that is already
+set up.
