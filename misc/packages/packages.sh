@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Package list for a fresh Ubuntu install. Run manually: ./packages/packages.sh
+# Package list for a fresh Ubuntu install. Run manually: ./misc/packages/packages.sh
 set -euo pipefail
 
 sudo install -m 0755 -d /etc/apt/keyrings

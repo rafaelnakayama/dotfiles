@@ -31,11 +31,11 @@ link "$DOT/zsh$VARIANT/.zshrc"       "$HOME/.zshrc"
 link "$DOT/zsh$VARIANT/.zprofile"    "$HOME/.zprofile"
 
 if [ "$OS" = linux ]; then
-  link "$DOT/xdg/xdg-terminals.list" "$HOME/.config/xdg-terminals.list"
+  link "$DOT/misc/xdg/xdg-terminals.list" "$HOME/.config/xdg-terminals.list"
 fi
 
-if [ "$OS" = linux ] && [ -f "$DOT/ptyxis/settings.dconf" ] && command -v dconf >/dev/null; then
-  dconf load /org/gnome/Ptyxis/ < "$DOT/ptyxis/settings.dconf"
+if [ "$OS" = linux ] && [ -f "$DOT/misc/ptyxis/settings.dconf" ] && command -v dconf >/dev/null; then
+  dconf load /org/gnome/Ptyxis/ < "$DOT/misc/ptyxis/settings.dconf"
   echo "  dconf: org.gnome.Ptyxis"
 fi
 

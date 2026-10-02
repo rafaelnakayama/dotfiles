@@ -1,11 +1,17 @@
-export ZSH="$HOME/Code/dotfiles/zsh/oh-my-zsh"
-# custom plugins are looked up in $ZSH_CUSTOM/plugins, i.e. zsh/plugins
-ZSH_CUSTOM="$HOME/Code/dotfiles/zsh"
-ZSH_THEME="alanpeabody"
-# pinned as a submodule; update it with git, not by itself
-zstyle ':omz:update' mode disabled
-# zsh-syntax-highlighting must stay last
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
-source "$ZSH/oh-my-zsh.sh"
-
 alias rm="rm -i"
+
+# Only the alanpeabody prompt from oh-my-zsh, not the framework: no aliases,
+# no auto_cd, no completion or history changes. These are the two library
+# files the theme calls into, plus what oh-my-zsh.sh would have set up for it.
+ZSH="$HOME/Code/dotfiles/zsh/oh-my-zsh"
+autoload -U colors is-at-least && colors
+setopt prompt_subst
+# the async git prompt needs more of the framework; the plain one does not
+zstyle ':omz:alpha:lib:git' async-prompt no
+source "$ZSH/lib/git.zsh"
+source "$ZSH/lib/prompt_info_functions.zsh"
+source "$ZSH/themes/alanpeabody.zsh-theme"
+
+source "$HOME/Code/dotfiles/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
+# must stay last
+source "$HOME/Code/dotfiles/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"

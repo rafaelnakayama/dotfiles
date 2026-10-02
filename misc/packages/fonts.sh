@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Fonts the shared configs ask for by name. Run manually: ./packages/fonts.sh
+# Fonts the shared configs ask for by name. Run manually: ./misc/packages/fonts.sh
 # Split out of packages.sh so an already-provisioned machine can pick up a new
 # font without replaying the apt and snap installs.
 set -euo pipefail

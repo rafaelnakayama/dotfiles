@@ -5,14 +5,11 @@
 !.gitignore
 !.gitmodules
 !install.sh
-!archive
 !ghostty
 !git
-!packages
-!ptyxis
+!misc
 !ssh
 !tmux
-!xdg
 !zed
 !zsh
 
