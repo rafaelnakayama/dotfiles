@@ -4,12 +4,17 @@
 
 !.gitignore
 !.gitmodules
-!README.md
 !install.sh
-!shared
-!macos
-!linux
 !archive
+!ghostty
+!git
+!packages
+!ptyxis
+!ssh
+!tmux
+!xdg
+!zed
+!zsh
 
 # Denied again inside the permitted directories
 **/.DS_Store
