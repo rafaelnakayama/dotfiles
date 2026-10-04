@@ -9,6 +9,7 @@
 !git
 !misc
 !ssh
+!starship
 !tmux
 !zed
 !zsh
