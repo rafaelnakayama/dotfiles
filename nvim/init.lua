@@ -1,23 +1,19 @@
+-- run 'brew install ripgrep fd' when running this init.lua for th first time (macos).
+
 vim.opt.confirm = true
 
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+vim.pack.add ({
 
-if not vim.loop.fs_stat(lazypath) then
-    vim.fn.system({
-        "git",
-        "clone",
-        "--filter=blob:none",
-        "https://github.com/folke/lazy.nvim.git",
-        "--branch=stable",
-        lazypath,
-    })
-end
-vim.opt.rtp:prepend(lazypath)
+	-- nvim-tree
+	
+	{ src = 'https://github.com/nvim-tree/nvim-web-devicons' }, 
+	{ src = 'https://github.com/nvim-tree/nvim-tree.lua' },
+		
+	-- nvim-telescope
+	
+	{ src = 'https://github.com/nvim-lua/plenary.nvim' },
+	{ src = 'https://github.com/nvim-telescope/telescope.nvim' }
+})
 
-local plugins = {
-    {'nvim-telescope/telescope.nvim', tag = 'v0.2.2', dependencies = { 'nvim-lua/plenary.nvim' }}
-}
-
-local opts = {}
-
-require("lazy").setup(plugins, opts)
+require("nvim-tree").setup()
+require("telescope").setup()
