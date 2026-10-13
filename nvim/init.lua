@@ -1,6 +1,12 @@
--- run 'brew install ripgrep fd' when running this init.lua for th first time (macos).
+-- when running this init.lua for the first time do: 
+--
+--	macos:
+--
+-- 	'brew install ripgrep fd' 
+-- 	'brew install tree-sitter-cli'
 
 vim.opt.confirm = true
+vim.opt.number = true
 
 vim.pack.add ({
 
