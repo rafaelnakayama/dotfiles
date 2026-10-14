@@ -1,5 +1,9 @@
 {
   "plugins": {
+    "nvim-lspconfig": {
+      "rev": "ac062d0d01c019c0dbdb798968f3e5d8b35c3853",
+      "src": "https://github.com/neovim/nvim-lspconfig"
+    },
     "nvim-tree.lua": {
       "rev": "355bcc85a48f45b3e728219f10b880d569928965",
       "src": "https://github.com/nvim-tree/nvim-tree.lua"
@@ -19,6 +23,10 @@
     "telescope.nvim": {
       "rev": "40aedd8a68c78a656a10a8d62d80c54af59420fb",
       "src": "https://github.com/nvim-telescope/telescope.nvim"
+    },
+    "vim-dadbod": {
+      "rev": "6d1d41da4873a445c5605f2005ad2c68c99d8770",
+      "src": "https://github.com/tpope/vim-dadbod"
     }
   }
 }
