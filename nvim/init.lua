@@ -6,9 +6,25 @@
 -- 	'brew install tree-sitter-cli'
 -- 	'brew install basedpyright jdtls'
 -- 	'brew install sqlcmd libpq && brew link --force libpq'
+-- 	'brew install ruff google-java-format sql-formatter'
 
 vim.opt.confirm = true
 vim.opt.number = true
+
+-- space is the <leader> key used by the keymaps below
+
+vim.g.mapleader = " "
+
+-- telescope-fzf-native has C code that needs 'make' after every install or update
+
+vim.api.nvim_create_autocmd("PackChanged", {
+	callback = function(ev)
+		local name, kind = ev.data.spec.name, ev.data.kind
+		if name == "telescope-fzf-native.nvim" and (kind == "install" or kind == "update") then
+			vim.system({ "make" }, { cwd = ev.data.path }):wait()
+		end
+	end,
+})
 
 vim.pack.add ({
 
@@ -21,6 +37,9 @@ vim.pack.add ({
 	
 	{ src = 'https://github.com/nvim-lua/plenary.nvim' },
 	{ src = 'https://github.com/nvim-telescope/telescope.nvim' },
+	{ src = 'https://github.com/nvim-telescope/telescope-fzf-native.nvim' },
+	{ src = 'https://github.com/nvim-telescope/telescope-ui-select.nvim' },
+	{ src = 'https://github.com/debugloop/telescope-undo.nvim' },
 
 	-- nvim-treesitter
 	
@@ -34,15 +53,76 @@ vim.pack.add ({
 
 	{ src = 'https://github.com/saghen/blink.cmp', version = vim.version.range('1.*') },
 
+	-- formatting
+
+	{ src = 'https://github.com/stevearc/conform.nvim' },
+
+	-- git
+
+	{ src = 'https://github.com/lewis6991/gitsigns.nvim' },
+
 	-- sql
 
 	{ src = 'https://github.com/tpope/vim-dadbod' }
 })
 
 require("nvim-tree").setup()
-require("telescope").setup()
 require("nvim-treesitter").setup()
 require("blink.cmp").setup()
+require("gitsigns").setup()
+
+-- telescope
+
+local telescope = require("telescope")
+local builtin = require("telescope.builtin")
+local actions = require("telescope.actions")
+
+telescope.setup({
+	pickers = {
+		find_files = {
+			file_ignore_patterns = { "node_modules", "dist", ".venv", "%.git/" },
+			hidden = true,
+		},
+	},
+	defaults = {
+		mappings = {
+			i = {
+				["<C-j>"] = actions.move_selection_next,
+				["<C-k>"] = actions.move_selection_previous,
+				["<C-x>"] = actions.delete_buffer,
+			},
+		},
+	},
+	extensions = {
+		["ui-select"] = {
+			require("telescope.themes").get_dropdown({}),
+		},
+		undo = {},
+	},
+})
+
+telescope.load_extension("ui-select")
+telescope.load_extension("undo")
+telescope.load_extension("fzf")
+
+vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
+vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live grep" })
+vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
+vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
+vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "Telescope list keymaps" })
+vim.keymap.set("n", "<leader>fs", builtin.git_status, { desc = "Telescope git status" })
+vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>", { desc = "Telescope undo tree" })
+
+-- format on save
+
+require("conform").setup({
+	formatters_by_ft = {
+		python = { "ruff_format" },
+		java = { "google-java-format" },
+		sql = { "sql_formatter" },
+	},
+	format_on_save = { timeout_ms = 2000 },
+})
 
 -- highlighting
 
