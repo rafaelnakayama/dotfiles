@@ -7,6 +7,12 @@ alias pip3=/opt/homebrew/bin/pip3.13
 
 alias rm="rm -i"
 
+# Vi mode on the command line.
+bindkey -v
+export KEYTIMEOUT=1
+# Drop the ":" execute-named-cmd prompt in normal mode.
+bindkey -M vicmd -r ":"
+
 # Prompt: config is starship/starship.toml, shared by both machines.
 eval "$(starship init zsh)"
 

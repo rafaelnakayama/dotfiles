@@ -20,7 +20,7 @@
       "milliseconds": 2000
     }
   },
-  "vim_mode": false,
+  "vim_mode": true,
   "project_panel": {
     "dock": "left"
   },
