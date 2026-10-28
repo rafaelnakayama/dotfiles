@@ -21,8 +21,6 @@ link() {
 
 link "$DOT/git/.gitconfig"           "$HOME/.gitconfig"
 link "$DOT/ssh/config"               "$HOME/.ssh/config"
-link "$DOT/zed/settings.json"        "$HOME/.config/zed/settings.json"
-link "$DOT/zed/keymap.json"          "$HOME/.config/zed/keymap.json"
 link "$DOT/ghostty/config"           "$HOME/.config/ghostty/config"
 link "$DOT/tmux/tmux.conf"           "$HOME/.config/tmux/tmux.conf"
 link "$DOT/tmux/plugins"             "$HOME/.config/tmux/plugins"

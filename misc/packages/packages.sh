@@ -37,7 +37,6 @@ sudo apt-get install -y \
 sudo usermod -aG docker "$USER"
 
 # Snap store apps (GUI, not available as .deb)
-sudo snap install code --classic
 sudo snap install dbeaver-ce
 sudo snap install discord
 sudo snap install drawio

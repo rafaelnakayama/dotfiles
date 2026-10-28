@@ -12,7 +12,6 @@
 !ssh
 !starship
 !tmux
-!zed
 !zsh
 
 # Denied again inside the permitted directories

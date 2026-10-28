@@ -63,8 +63,16 @@ vim.pack.add ({
 
 	-- sql
 
-	{ src = 'https://github.com/tpope/vim-dadbod' }
+	{ src = 'https://github.com/tpope/vim-dadbod' },
+
+	-- colorscheme
+
+	{ src = 'https://github.com/folke/tokyonight.nvim' }
 })
+
+-- storm: tokyo night with a lighter, bluer background than the terminal's night
+
+vim.cmd.colorscheme("tokyonight-storm")
 
 require("nvim-tree").setup()
 require("nvim-treesitter").setup()
