@@ -1,0 +1,16 @@
+# GNOME shortcuts that mirror macOS ones. install.sh loads this file
+# with `dconf load /org/gnome/`.
+
+# macOS: cmd+ctrl+f
+[desktop/wm/keybindings]
+toggle-fullscreen=['<Control><Shift>f']
+
+# Moved off Ctrl+Alt+T so it lands on the same physical keys as the
+# Ctrl+Cmd+N global hotkey on macOS. xdg-terminals.list points it at Ghostty.
+[settings-daemon/plugins/media-keys]
+terminal=['<Control><Alt>n']
+
+# Caps Lock and Escape swapped, for nvim. macOS gets the same through
+# misc/launchd/macos/local.swap-caps-escape.plist.
+[desktop/input-sources]
+xkb-options=['caps:swapescape']

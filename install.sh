@@ -34,16 +34,19 @@ if [ "$OS" = linux ]; then
   link "$DOT/misc/xdg/xdg-terminals.list" "$HOME/.config/xdg-terminals.list"
 fi
 
+# Caps Lock <-> Escape swap; runs at each login (GNOME's is in keybindings.dconf)
+if [ "$OS" = macos ]; then
+  link "$DOT/misc/launchd/macos/local.swap-caps-escape.plist" \
+       "$HOME/Library/LaunchAgents/local.swap-caps-escape.plist"
+fi
+
 if [ "$OS" = linux ] && [ -f "$DOT/misc/ptyxis/settings.dconf" ] && command -v dconf >/dev/null; then
   dconf load /org/gnome/Ptyxis/ < "$DOT/misc/ptyxis/settings.dconf"
   echo "  dconf: org.gnome.Ptyxis"
 fi
 
-# GNOME's own "launch terminal" shortcut, moved off Ctrl+Alt+T so it matches
-# the Ctrl+Cmd+N global hotkey on macOS. xdg-terminals.list points it at Ghostty.
-MEDIA_KEYS=org.gnome.settings-daemon.plugins.media-keys
-if [ "$OS" = linux ] && command -v gsettings >/dev/null &&
-   gsettings list-keys "$MEDIA_KEYS" 2>/dev/null | grep -qx terminal; then
-  gsettings set "$MEDIA_KEYS" terminal "['<Control><Alt>n']"
-  echo "  gsettings: launch terminal = Ctrl+Alt+N"
+# GNOME shortcuts that mirror macOS ones
+if [ "$OS" = linux ] && command -v dconf >/dev/null; then
+  dconf load /org/gnome/ < "$DOT/misc/gnome/keybindings.dconf"
+  echo "  dconf: GNOME keybindings"
 fi
