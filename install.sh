@@ -40,6 +40,13 @@ if [ "$OS" = macos ]; then
        "$HOME/Library/LaunchAgents/local.swap-caps-escape.plist"
 fi
 
+# Ctrl+Cmd+N opens Ghostty even when it isn't running; needs Accessibility
+# permission for skhd. Already-running service just errors, hence || true.
+if [ "$OS" = macos ]; then
+  link "$DOT/misc/skhd/macos/skhdrc" "$HOME/.config/skhd/skhdrc"
+  if command -v skhd >/dev/null; then skhd --start-service >/dev/null 2>&1 || true; fi
+fi
+
 if [ "$OS" = linux ] && [ -f "$DOT/misc/ptyxis/settings.dconf" ] && command -v dconf >/dev/null; then
   dconf load /org/gnome/Ptyxis/ < "$DOT/misc/ptyxis/settings.dconf"
   echo "  dconf: org.gnome.Ptyxis"

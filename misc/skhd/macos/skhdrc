@@ -1,0 +1,3 @@
+# Open Ghostty, or bring it to the front. Same physical keys as Ctrl+Alt+N,
+# GNOME's "launch terminal" shortcut on Linux (misc/gnome/keybindings.dconf).
+ctrl + cmd - n : open -a Ghostty

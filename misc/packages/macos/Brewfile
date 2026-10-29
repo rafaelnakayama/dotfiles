@@ -1,3 +1,4 @@
+tap "koekeishiya/formulae"
 tap "microsoft/mssql-release", "https://github.com/Microsoft/homebrew-mssql-release"
 # GitHub command-line tool
 brew "gh"
@@ -25,6 +26,8 @@ brew "starship"
 brew "tmux"
 # ODBC 3 connectivity for UNIX
 brew "unixodbc"
+# Simple hotkey-daemon for macOS
+brew "koekeishiya/formulae/skhd"
 # ODBC Driver for Microsoft(R) SQL Server(R)
 brew "microsoft/mssql-release/msodbcsql18", trusted: true
 # Terminal-based AI coding assistant

@@ -1,9 +1,10 @@
 # GNOME shortcuts that mirror macOS ones. install.sh loads this file
 # with `dconf load /org/gnome/`.
 
-# macOS: cmd+ctrl+f
+# macOS: cmd+ctrl+f, cmd+ctrl+q
 [desktop/wm/keybindings]
 toggle-fullscreen=['<Control><Shift>f']
+close=['<Alt>F4', '<Control><Shift>q']
 
 # Moved off Ctrl+Alt+T so it lands on the same physical keys as the
 # Ctrl+Cmd+N global hotkey on macOS. xdg-terminals.list points it at Ghostty.
