@@ -11,6 +11,13 @@
 vim.opt.confirm = true
 vim.opt.number = true
 
+-- looks, from github.com/ngscheurich/nvim-from-scratch
+
+vim.opt.cursorline = true
+vim.opt.showmode = false
+vim.opt.signcolumn = "yes"
+vim.opt.scrolloff = 8
+
 -- space is the <leader> key used by the keymaps below
 
 vim.g.mapleader = " "
@@ -67,17 +74,37 @@ vim.pack.add ({
 
 	-- colorscheme
 
-	{ src = 'https://github.com/folke/tokyonight.nvim' }
+	{ src = 'https://github.com/folke/tokyonight.nvim' },
+
+	-- statusline
+
+	{ src = 'https://github.com/nvim-lualine/lualine.nvim' }
 })
 
--- storm: tokyo night with a lighter, bluer background than the terminal's night
+-- night: same tokyo night style as the terminal
 
-vim.cmd.colorscheme("tokyonight-storm")
+vim.cmd.colorscheme("tokyonight-night")
 
-require("nvim-tree").setup()
+-- no folder arrows; the open/closed folder icon already shows the state
+
+require("nvim-tree").setup({
+	renderer = { icons = { show = { folder_arrow = false } } },
+})
 require("nvim-treesitter").setup()
-require("blink.cmp").setup()
+require("blink.cmp").setup({
+	completion = { documentation = { auto_show = true } },
+})
 require("gitsigns").setup()
+
+-- one statusline for all splits; icons come from nvim-web-devicons
+
+require("lualine").setup({
+	options = {
+		globalstatus = true,
+		component_separators = "│",
+		section_separators = "",
+	},
+})
 
 -- telescope
 
